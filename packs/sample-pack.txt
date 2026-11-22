@@ -1,0 +1,31 @@
+; ============================================================
+;  Grid Gobbler category pack
+; ============================================================
+;  Every .txt file in this "packs" folder is loaded when the
+;  game starts. The categories show up in Words and Mixed mode.
+;  No programming needed - just edit, save, and restart the game.
+;
+;  [Title]   the rule shown at the top of the screen
+;  is=       finishes the sentence "Mammoth is not ____."
+;  clue=     hint shown when the level starts (optional)
+;  yes=      right answers, separated by commas (at least 4;
+;            8 or more works best). You can use several yes= lines.
+;  no=       tricky wrong answers (optional). Other wrong answers
+;            are borrowed from the rest of the categories.
+;
+;  Keep words short (about 13 letters or fewer) so they fit.
+;  Lines starting with ; are comments.
+; ============================================================
+
+[Dinosaurs]
+is=a dinosaur
+clue=They ruled the Earth millions of years ago.
+yes=Triceratops,Stegosaurus,Velociraptor,Brachiosaurus,Allosaurus,Diplodocus
+yes=Iguanodon,Ankylosaurus,Spinosaurus,Raptor
+no=Mammoth,Pterodactyl,Sabertooth,Crocodile
+
+[Capital Cities]
+is=a capital city
+clue=Each one is the capital of a country.
+yes=Paris,Tokyo,London,Rome,Cairo,Ottawa,Madrid,Berlin,Lima,Nairobi,Dublin,Oslo
+no=Sydney,Toronto,New York,Venice

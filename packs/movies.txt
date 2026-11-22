@@ -1,0 +1,26 @@
+; Grid Gobbler pack: MOVIES
+; (format is explained in sample-pack.txt)
+
+[Animated Movies]
+is=an animated movie
+clue=Feature films that are drawn or computer animated.
+yes=Shrek,Frozen,Moana,Coco,Bambi,Dumbo,Toy Story,Mulan,Aladdin,Tangled,Ratatouille,Zootopia,Finding Nemo,Pinocchio,Encanto
+no=Titanic,Jaws,Rocky
+
+[Classic Movies]
+is=a live-action classic
+clue=Big live-action hits - no cartoons here.
+yes=Titanic,Jaws,Rocky,Casablanca,Psycho,Grease,Gladiator,Jurassic Park,Star Wars,The Godfather,Top Gun,Ghostbusters,Home Alone,The Matrix,E.T.
+no=Shrek,Bambi,Frozen
+
+[Movie Genres]
+is=a movie genre
+clue=The different kinds of movies.
+yes=Comedy,Drama,Horror,Western,Musical,Thriller,Romance,Fantasy,Mystery,Action,Sci-Fi,Documentary,Adventure
+no=Popcorn,Sequel,Trailer,Ticket
+
+[Superheroes]
+is=a superhero
+clue=Caped (and uncaped) crusaders from comics and movies.
+yes=Batman,Superman,Spider-Man,Iron Man,Hulk,Wonder Woman,Aquaman,Flash,Wolverine,Black Panther,Daredevil,Green Lantern,Ant-Man
+no=Joker,Thanos,Lex Luthor,Sherlock

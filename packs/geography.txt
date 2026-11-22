@@ -1,0 +1,32 @@
+; Grid Gobbler pack: GEOGRAPHY
+; (format is explained in sample-pack.txt)
+
+[Rivers]
+is=a river
+clue=Long ribbons of fresh water flowing to the sea.
+yes=Nile,Amazon,Mississippi,Danube,Thames,Ganges,Yangtze,Volga,Rhine,Seine,Hudson,Mekong,Zambezi,Missouri,Euphrates
+no=Sahara,Everest,Pacific,Lake Erie
+
+[Mountains]
+is=a mountain
+clue=Famous peaks from around the world.
+yes=Everest,Kilimanjaro,Denali,Fuji,Matterhorn,K2,Olympus,Rainier,Etna,Vesuvius,Mont Blanc,Aconcagua,Pikes Peak
+no=Grand Canyon,Niagara Falls,Sahara,Amazon
+
+[Oceans and Seas]
+is=an ocean or sea
+clue=Big bodies of salt water.
+yes=Pacific,Atlantic,Arctic,Indian Ocean,Caribbean,Baltic,Red Sea,Black Sea,Dead Sea,North Sea,Aegean,Adriatic,Bering Sea
+no=Nile,Lake Tahoe,Danube,Niagara Falls
+
+[Deserts]
+is=a desert
+clue=Dry places where very little rain falls.
+yes=Sahara,Gobi,Mojave,Kalahari,Atacama,Namib,Sonoran,Negev,Thar,Death Valley,Great Basin
+no=Amazon,Everglades,Yukon,Alps
+
+[Famous Landmarks]
+is=a famous landmark
+clue=Places people travel across the world to see.
+yes=Eiffel Tower,Big Ben,Colosseum,Taj Mahal,Stonehenge,Great Wall,Parthenon,Machu Picchu,Golden Gate,Kremlin,Alhambra,Petra,Mt. Rushmore
+no=Atlantis,Narnia,Hogwarts,Gotham

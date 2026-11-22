@@ -1,0 +1,7 @@
+# VB6 only reads project files with Windows (CRLF) line endings
+*.frm text eol=crlf
+*.bas text eol=crlf
+*.vbp text eol=crlf
+packs/*.txt text eol=crlf
+*.exe binary
+*.png binary

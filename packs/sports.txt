@@ -1,0 +1,38 @@
+; Grid Gobbler pack: SPORTS
+; (format is explained in sample-pack.txt)
+
+[Sports Equipment]
+is=a piece of sports equipment
+clue=Gear you need to play the game.
+yes=Racket,Puck,Goalpost,Hockey Stick,Golf Club,Surfboard,Skis,Baseball Bat,Shin Guards,Mouthguard,Net,Paddle,Dumbbell,Shuttlecock
+no=Referee,Stadium,Trophy,Coach
+
+[Sports Terms]
+is=a sports term
+clue=Things announcers shout during a game.
+yes=Touchdown,Home Run,Slam Dunk,Hat Trick,Birdie,Knockout,Free Kick,Penalty,Ace,Goal,Offside,Hole in One,Foul,Grand Slam,Field Goal
+no=Checkmate,Bingo,Jackpot
+
+[Sports Legends]
+is=a sports legend
+clue=Some of the greatest athletes of all time.
+yes=Pele,Messi,Ronaldo,Gretzky,Babe Ruth,Tom Brady,LeBron James,Usain Bolt,Tiger Woods,Simone Biles,Muhammad Ali,Serena,Federer,Kobe Bryant
+no=Elvis,Mozart,Einstein,Houdini
+
+[NFL Teams]
+is=an NFL team
+clue=Pro football teams.
+yes=Packers,Steelers,Patriots,Chiefs,Raiders,Vikings,Saints,Chargers,Browns,49ers,Commanders,Texans,Buccaneers
+no=Yankees,Lakers,Red Sox
+
+[NBA Teams]
+is=an NBA team
+clue=Pro basketball teams.
+yes=Lakers,Celtics,Knicks,Spurs,Suns,Nets,Warriors,Mavericks,Pistons,Nuggets,76ers,Pacers,Jazz,Bulls
+no=Cowboys,Dodgers,Packers
+
+[MLB Teams]
+is=an MLB team
+clue=Pro baseball teams.
+yes=Yankees,Dodgers,Red Sox,Mets,Braves,Astros,Phillies,Padres,Mariners,Brewers,Royals,Rangers,Twins,Pirates,Angels
+no=Celtics,Steelers,Knicks

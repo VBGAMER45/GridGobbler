@@ -1,0 +1,38 @@
+; Grid Gobbler pack: HISTORY
+; (format is explained in sample-pack.txt)
+
+[U.S. Presidents]
+is=a U.S. president
+clue=Each one has lived in the White House (or led before it was built).
+yes=Lincoln,Jefferson,Adams,Roosevelt,Kennedy,Reagan,Obama,Truman,Eisenhower,Grant,Madison,Monroe,Jackson,Nixon,Clinton,Wilson,Carter,Taft
+no=Franklin,Hamilton,Churchill,Napoleon
+
+[Inventors]
+is=an inventor
+clue=People who dreamed up something new.
+yes=Edison,Tesla,Bell,Wright,Marconi,Gutenberg,Franklin,Watt,Morse,Da Vinci,Whitney,Carver,Goodyear,Nobel,Braille
+no=Mozart,Picasso,Shakespeare,Cleopatra
+
+[Explorers]
+is=an explorer
+clue=They set out to find places their maps did not show.
+yes=Columbus,Magellan,Marco Polo,Drake,Lewis,Clark,Cortes,Cabot,Vespucci,Amundsen,Shackleton,Livingstone,Da Gama,Champlain
+no=Beethoven,Einstein,Caesar,Van Gogh
+
+[Ancient Peoples]
+is=an ancient people
+clue=Civilizations from long, long ago.
+yes=Egyptians,Romans,Greeks,Aztecs,Maya,Incas,Persians,Babylonians,Sumerians,Phoenicians,Celts,Minoans,Etruscans
+no=Pilgrims,Pirates,Cowboys,Astronauts
+
+[Wars]
+is=a war
+clue=Conflicts you read about in history class.
+yes=Civil War,World War I,World War II,Vietnam War,Korean War,Cold War,Gulf War,Crimean War,Boer War,Trojan War,War of 1812
+no=Gold Rush,Renaissance,Ice Age,Moon Landing
+
+[Greek Gods]
+is=a Greek god
+clue=They lived on Mount Olympus in the old myths.
+yes=Zeus,Hera,Apollo,Athena,Ares,Poseidon,Hermes,Artemis,Hades,Demeter,Aphrodite,Dionysus
+no=Thor,Odin,Loki,Hercules

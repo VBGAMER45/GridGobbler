@@ -1,0 +1,20 @@
+; Grid Gobbler pack: TV SHOWS
+; (format is explained in sample-pack.txt)
+
+[Sitcoms]
+is=a sitcom
+clue=Half-hour TV comedies.
+yes=Friends,Seinfeld,Cheers,Frasier,The Office,Full House,Scrubs,Community,Roseanne,Happy Days,I Love Lucy,Modern Family,Parks and Rec
+no=Jeopardy,Survivor,60 Minutes
+
+[TV Cartoons]
+is=a TV cartoon
+clue=Animated shows from the small screen.
+yes=The Simpsons,SpongeBob,Scooby-Doo,Pokemon,Rugrats,Arthur,Bluey,Peppa Pig,The Jetsons,Flintstones,Tom and Jerry,Looney Tunes,DuckTales,Futurama,Family Guy
+no=Friends,Seinfeld,Cheers
+
+[Game and Reality Shows]
+is=a game or reality show
+clue=Real people competing for prizes.
+yes=Jeopardy,Family Feud,Survivor,Big Brother,American Idol,The Voice,Top Chef,Shark Tank,Password,Match Game,Double Dare,MasterChef,Amazing Race
+no=Frasier,Bluey,Scrubs

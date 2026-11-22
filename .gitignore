@@ -1,0 +1,9 @@
+# Per-player files written by the game
+gobbler.hi
+gobbler.cfg
+
+# VB6 build and IDE leftovers
+build.log
+*.vbw
+*.tmp
+*.scc
