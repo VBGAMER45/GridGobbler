@@ -21,6 +21,10 @@ image or audio files.
 |---|---|
 | ![Level intro](screenshots/level-intro.png) | ![Hall of Fame](screenshots/hall-of-fame.png) |
 
+| About and credits |
+|---|
+| ![About screen](screenshots/about.png) |
+
 **Bonus rounds**
 
 | Battery Dash | Lightning Round |
@@ -47,6 +51,7 @@ image or audio files.
 - **Combos, perfect-level bonuses and extra lives** for accurate play.
 - **Snowflake power-up** that freezes every Glitch for a few seconds.
 - **Hall of Fame** (top 10) and remembered difficulty/sound settings.
+- **Animated About screen** with the credits and a Glitch chase.
 - **Add your own categories** with a text editor. No programming needed.
 
 ## Running the game
@@ -75,6 +80,7 @@ On the title screen:
 | D or Left/Right | Change difficulty |
 | B | Practise a bonus round (cycles through all three) |
 | H | Hall of Fame |
+| A | About and credits |
 | Esc | Quit |
 
 ## How to play

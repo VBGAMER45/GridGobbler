@@ -67,6 +67,7 @@ Private Const ST_MSG As Long = 2
 Private Const ST_PAUSE As Long = 3
 Private Const ST_SCORES As Long = 4
 Private Const ST_NAME As Long = 5
+Private Const ST_ABOUT As Long = 6
 
 ' ---- What happens when a message box is closed ----
 Private Const AFTER_RESUME As Long = 0
@@ -270,6 +271,9 @@ Private Sub Form_KeyDown(KeyCode As Integer, Shift As Integer)
         Case vbKeyH
             mNewRank = 0
             mState = ST_SCORES
+        Case vbKeyA
+            PlaySfx sndLevel
+            mState = ST_ABOUT
         Case vbKeyEscape
             Unload Me
         End Select
@@ -307,6 +311,11 @@ Private Sub Form_KeyDown(KeyCode As Integer, Shift As Integer)
     Case ST_SCORES
         If KeyCode = vbKeySpace Or KeyCode = vbKeyReturn Or KeyCode = vbKeyEscape Then
             mNewRank = 0
+            mState = ST_TITLE
+        End If
+
+    Case ST_ABOUT
+        If KeyCode = vbKeySpace Or KeyCode = vbKeyReturn Or KeyCode = vbKeyEscape Then
             mState = ST_TITLE
         End If
 
@@ -353,6 +362,8 @@ Private Sub Form_MouseDown(Button As Integer, Shift As Integer, X As Single, Y A
         If mMsgDelay = 0 Then DismissMsg
     Case ST_SCORES
         mNewRank = 0
+        mState = ST_TITLE
+    Case ST_ABOUT
         mState = ST_TITLE
     End Select
 End Sub
@@ -1268,6 +1279,8 @@ Private Sub Render()
         DrawTitle
     Case ST_SCORES
         DrawScores
+    Case ST_ABOUT
+        DrawAbout
     Case ST_NAME
         DrawNameEntry
     Case Else
@@ -1635,7 +1648,7 @@ Private Sub DrawTitle()
     Me.FontSize = 9
     TextC "Arrows = move     Space = gobble     P = pause     M = sound (" & IIf(gSoundOn, "on", "off") & ")", _
           SCR_W / 2, 394, RGB(170, 185, 235)
-    TextC "Bonus round every 3 levels  (B = try one now)      H = Hall of Fame      Esc = quit", _
+    TextC "Bonus every 3 levels (B = try one)     H = Hall of Fame     A = About     Esc = quit", _
           SCR_W / 2, 411, RGB(170, 185, 235)
     s = CategoryCount() & " word categories"
     If mCustomCats > 0 Then s = s & "  (" & mCustomCats & " from the packs folder)"
@@ -1685,6 +1698,111 @@ Private Sub DrawScores()
         TextC "Press SPACE to return", SCR_W / 2, 452, RGB(150, 165, 220)
     End If
 End Sub
+
+Private Sub DrawAbout()
+    Dim i As Long, y As Single, hdr As Long, soft As Long
+    Dim s As String, ch As String, x As Single, tw As Single
+    Dim lap As Long, px0 As Single, gx As Single, goRight As Boolean
+    Dim who(0 To 4) As String, role(0 To 4) As String
+
+    DrawStars
+    hdr = RGB(140, 160, 235)
+    soft = RGB(200, 210, 255)
+
+    Me.FontBold = True
+    Me.FontSize = 28
+    TextC "ABOUT", SCR_W / 2, 36, RGB(90, 220, 255), True
+    Me.FontSize = 10
+    TextC "Grid Gobbler   -   version " & App.Major & "." & App.Minor, SCR_W / 2, 70, soft
+
+    ' ---- the big wavy, colour-cycling name ----
+    TextC "DREAMED UP AND CREATED BY", SCR_W / 2, 102, hdr
+    s = "JONATHAN VALENTIN"
+    Me.FontSize = 24
+    tw = Me.TextWidth(s)
+    x = (SCR_W - tw) / 2
+    For i = 1 To Len(s)
+        ch = Mid$(s, i, 1)
+        y = 138 + Sin((mFrame + i * 3) * 0.22) * 5
+        TextL ch, x + 2, y + 2, RGB(0, 0, 0)
+        TextL ch, x, y, NameColor(mFrame \ 2 + i)
+        x = x + Me.TextWidth(ch)
+    Next
+
+    ' ---- the cast ----
+    Me.FontSize = 10
+    TextC "STARRING", SCR_W / 2, 180, hdr
+    FillBox 150, 190, 490, 191, RGB(70, 90, 170), -1
+
+    who(0) = "BOLT":      role(0) = "as himself (always hungry)"
+    who(1) = "ZIPPER":    role(1) = "does all his own stunts"
+    who(2) = "WOBBLER":   role(2) = "still looking for the exit"
+    who(3) = "HUNTER":    role(3) = "just wants a hug. Honest."
+    who(4) = "SCRAMBLER": role(4) = "tidies up by making a mess"
+
+    For i = 0 To 4
+        y = 208 + i * 24
+        If i = 0 Then
+            DrawRobot 150, y, 0.42, ((mFrame \ 6) Mod 3) = 0, 0, False
+            Me.FontSize = 11
+            TextL who(i), 176, y, RGB(255, 210, 50)
+        Else
+            DrawGlitch 150, y, i - 1, 0.42, mFrame + i * 5
+            Me.FontSize = 11
+            TextL who(i), 176, y, GlitchColor(i - 1)
+        End If
+        Me.FontSize = 9
+        TextL role(i), 290, y, RGB(190, 200, 235)
+    Next
+
+    ' ---- small print ----
+    Me.FontSize = 9
+    TextC "Written in Visual Basic 6.  Yes, really.  On purpose.", SCR_W / 2, 336, soft
+    TextC "No squares were harmed in the making of this game.  (They were gobbled.)", SCR_W / 2, 354, soft
+    TextC "Free and open source under the MIT License.  (c) 2026 Jonathan Valentin", SCR_W / 2, 372, RGB(255, 210, 50)
+
+    ' ---- the chase: Glitches chase Bolt one way, then Bolt chases them back ----
+    lap = (mFrame \ 150) Mod 2
+    goRight = (lap = 0)
+    If goRight Then
+        px0 = -340 + (mFrame Mod 150) * 7
+    Else
+        px0 = SCR_W + 60 - (mFrame Mod 150) * 7
+    End If
+    y = 414 + Abs(Sin(mFrame * 0.4)) * -4
+    If goRight Then
+        ' Bolt out in front, running for it
+        DrawRobot px0 + 280, y, 0.9, ((mFrame \ 3) Mod 2) = 0, 3, False
+        For i = 0 To 3
+            gx = px0 + i * 56
+            DrawGlitch gx, 414 + Sin((mFrame + i * 4) * 0.5) * 3, 3 - i, 0.7, mFrame + i * 5
+        Next
+    Else
+        ' the tables have turned: frozen blue Glitches flee from Bolt
+        For i = 0 To 3
+            gx = px0 + i * 56
+            DrawGlitch gx, 414 + Sin((mFrame + i * 4) * 0.5) * 3, i, 0.7, mFrame + i * 5, RGB(120, 190, 255)
+        Next
+        DrawRobot px0 + 280, y, 0.9, ((mFrame \ 3) Mod 2) = 0, 2, False
+        DrawSnowflake px0 + 320, 392
+    End If
+
+    If ((mFrame \ 8) Mod 3) <> 0 Then
+        Me.FontSize = 11
+        TextC "Press SPACE to return", SCR_W / 2, 458, RGB(150, 165, 220)
+    End If
+End Sub
+
+Private Function NameColor(ByVal n As Long) As Long
+    Select Case n Mod 6
+    Case 0: NameColor = RGB(255, 210, 50)
+    Case 1: NameColor = RGB(255, 150, 60)
+    Case 2: NameColor = RGB(255, 100, 120)
+    Case 3: NameColor = RGB(200, 130, 255)
+    Case 4: NameColor = RGB(90, 220, 255)
+    Case Else: NameColor = RGB(120, 240, 150)
+    End Select
+End Function
 
 Private Sub DrawNameEntry()
     Dim s As String, c As Long
